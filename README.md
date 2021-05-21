@@ -3,7 +3,7 @@ Stats for bridge duels
 
 Original by [Zxnii](https://github.com/Zxnii/duels-overlay)
 
-Modified for bridge duels
+Modified by me for bridge duels
 
 ### Installation
 
