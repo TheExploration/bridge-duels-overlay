@@ -1,5 +1,5 @@
 # bridge-duels-overlay
-Stats for bridge duels
+Stats for hypixel bridge duels
 
 Original by [Zxnii](https://github.com/Zxnii/duels-overlay)
 
