@@ -1,4 +1,4 @@
-# bridge-duels-overlay
+# bridge-duels-overlay (Doesn't work anymore cause hypixel updated duels)
 Stats for Hypixel bridge duels
 
 Original by [Zxnii](https://github.com/Zxnii/duels-overlay)
