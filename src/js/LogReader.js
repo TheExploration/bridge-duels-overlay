@@ -58,14 +58,45 @@ class LogReader extends EventEmitter {
                         this.emit("server_change")
                     }
 
-                    if (/(.*) joined \((\d)\/(\d)\)!/.test(message)) {
-                        const name = message.split(" ")[0]
-                        this.emit("join", name)
-                    }
+                    if (/ONLINE: (.*?)/.test(message)) {
+                        this.emit("server_change")
 
+                        let length = message.split(' ')
+
+                       for (let i = 1; i < length.length; i++) {
+                            const name = message.split(" ")[i].replace(',', '')
+                            this.emit("join", name)
+                        }             
+                    }
+                    
                     if (/(.*) has quit!/.test(message)) {
                         const name = message.split(" ")[0]
                         this.emit("leave", name)
+                    }
+                    if (/No player found with name c!/.test(message)) {
+                        this.emit("server_change")
+                    }
+
+                    if (/That person hasn't invited you to be friends! (.*?)/.test(message)) {
+                        const name = message.split("Try /friend ")[1]
+                        this.emit("join", name)
+                    }
+
+                    if (/(.*): -clear/.test(message)) {
+                        this.emit("server_change")
+                    }
+
+                    if (/(.*): -s (.*)/.test(message)) {
+                        const name = message.split("-s ")[1]
+                        this.emit("join", name)
+                    }	
+                    let regex = /^.*Opponent:\s\[[^\]]*\]\s(.*)$/
+                    if (regex.test(message)) {
+                        const name = message.split(regex)[1]
+                        this.emit("join", name)
+                    } else if (/(.*)Opponent: (.*)/.test(message)) {
+                        const name = message.split("Opponent: ")[1]
+                        this.emit("join", name)
                     }
                 }
             }
