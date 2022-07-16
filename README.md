@@ -14,7 +14,5 @@ Modified by me for bridge duels
 6. Only been tested on 1.8.9 and works for Vanilla, Forge, Optifine, Lunar, Badlion, and Pvplounge
 
 ### Usage
-1. Players' names will automatically go into the overlay when the game starts
-2. Type /f deny USERNAME in chat to add a specific player's stats to the overlay. (or -s USERNAME)
-3. Type /who in chat to add stats from the players in your lobby to the overlay.
-4. Type /f c in chat to clear the stats. (or -clear)
+1. Players' names will automatically go into the overlay in the pregame lobby
+2. Type /w c to clear the overlay
