@@ -90,14 +90,9 @@ class LogReader extends EventEmitter {
                         const name = message.split("-s ")[1]
                         this.emit("join", name)
                     }	
-                    let regex = /^.*Opponent:\s\[[^\]]*\]\s(.*)$/
-                    if (regex.test(message)) {
-                        const name = message.split(regex)[1]
-                        this.emit("join", name)
-                    } else if (/(.*)Opponent: (.*)/.test(message)) {
-                        const name = message.split("Opponent: ")[1]
-                        this.emit("join", name)
-                    }
+                } else if (/(.*)\[seraph-(.*)\/INFO\]: \[CHAT\] name: (.*)/.test(latestLog)) {
+                    const message = latestLog.split("[CHAT] name: ")[1].trim()
+                    this.emit("join", message)
                 }
             }
 

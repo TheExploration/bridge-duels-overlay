@@ -18,7 +18,8 @@
 const fetch = require("node-fetch"),
     sha1 = require("sha1"),
     fs = require("fs").promises
-
+    //FIX?
+    process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 class McAPI {
     constructor() {
 
